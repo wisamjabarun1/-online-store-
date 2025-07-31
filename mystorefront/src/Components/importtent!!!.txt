@@ -1,0 +1,31 @@
+adsaadas 
+
+asdas@W1
+
+
+
+
+
+
+{isRequestToGetCurrentUserDone ? (
+            currentUser ? (
+              <>
+               <button className="add-to-cart-btn">Add to Cart</button>
+              <button className="add-to-favorites-btn" >Add to favorites</button>
+              </>
+            ) : (
+              <>
+                <h3> Login to buy or to add to favorites 
+              </>
+            )
+          ) : null}
+
+
+CREATE TABLE oneorder  (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+ username VARCHAR NOT NULL,
+  item_id INT NOT NULL,
+  UNIQUE(username, item_id),
+  FOREIGN KEY (username) REFERENCES users(username) ON DELETE CASCADE,
+  FOREIGN KEY (item_id) REFERENCES items(item_id) ON DELETE CASCADE
+);
